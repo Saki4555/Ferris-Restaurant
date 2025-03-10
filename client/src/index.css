@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary-styles {
+  @apply bg-ferris-prim hover:bg-ferris-prim-hov text-ferris-sec hover:text-white
+}
+
+.nav-text {
+  @apply text-ferris-ter hover:text-ferris-prim
+}
+.nav-text-active {
+  @apply text-ferris-prim border-b border-b-ferris-prim
+}

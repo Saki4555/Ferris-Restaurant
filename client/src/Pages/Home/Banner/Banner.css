@@ -1,0 +1,22 @@
+.swiper-pagination-bullet-active {
+  background-color: whitesmoke !important; /* Change to your desired color */
+}
+
+.swiper-pagination-bullet {
+  background-color: #da073b  /* Change to your desired color */
+}
+
+
+
+/* Default color */
+.swiper-button-prev, 
+.swiper-button-next {
+  color: #800020 !important; /* Change to your desired color */
+  transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect */
+.swiper-button-prev:hover, 
+.swiper-button-next:hover {
+  color: whitesmoke !important; /* Change to your desired hover color */
+}
