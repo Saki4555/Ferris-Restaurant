@@ -22,12 +22,13 @@
 // export default Blog;
 import Meta from "../Shared/Meta";
 import { motion, useAnimation } from 'framer-motion';
-import Blog1 from "./Blog1";
-import Blog2 from "./Blog2";
-import Blog3 from "./Blog3";
+import { Parallax } from "react-parallax";
+
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from "react";
 import BlogBanner from "./BlogBanner";
+import { BLOG_POSTS } from "../../constants";
+import BlogCard from "./BlogCard";
 
 const Blog = () => {
   const [refBlog1, inViewBlog1] = useInView({
@@ -93,8 +94,12 @@ const Blog = () => {
 
 
       <BlogBanner />
-      <div className="h-96">
-         <h1 className="text-8xl font-cormorant text-ferris-prim">Not Enough Data</h1>
+      <div className="grid py-16 grid-cols-1 lg:grid-cols-2 gap-10 container mx-auto px-5 md:px-20">
+       {
+        BLOG_POSTS.map(item => (
+          <BlogCard key={item.id} item={item}/>
+        ))
+       }
       </div>
     </>
   );

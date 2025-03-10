@@ -5,11 +5,11 @@ import logo from '../../assets/logo/logo-rec.jpg'
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-10 lg:px-4">
         {/* Top Navigation Links */}
         <div className="flex justify-between items-center pb-2">
           {/* <h1 className="font-cormorant text-4xl">Ferris</h1> */}
-          <img src={logo} className="w-28" alt="" />
+          <img src={logo} className="w-28" alt="Ferris" />
           <div className="flex gap-6 items-center text-ferris-sec/50 text-sm">
             {FOOTER_DATA.footerNav.map((item) => (
               <Link
@@ -28,8 +28,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-3">GET IN TOUCH</h3>
             <p className="text-gray-400 mb-4">
-              Lorem ipsum dolor sit amet consectetur elit. Etiam sollicitudin
-              ante phasellus, sed egestas cursus eget porta.
+            The Ferris Osteria is located on one of the world's most famous shopping streets in Europe.Fresh ingredients, real Italian flair.
             </p>
             <div className="flex space-x-4">
               {FOOTER_DATA.socialLinks.map((link) => {
@@ -62,7 +61,7 @@ const Footer = () => {
                     </div>
                     <div>
                       <p className="text-ferris-prim">{info.label}</p>
-                      <p className="text-ferris-sec">{info.value}</p>
+                      <a href={info.url} className="text-ferris-sec">{info.value}</a>
                     </div>
                   </div>
                 );
@@ -74,7 +73,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-3">OPENING HOURS</h3>
             <ul>
-              {FOOTER_DATA.openingHours.map((hour) => (
+              {/* {FOOTER_DATA.openingHours.map((hour) => (
                 <li
                   key={hour.id}
                   className={`text-gray-400 mb-1 ${
@@ -83,7 +82,8 @@ const Footer = () => {
                 >
                   {hour.days}: {hour.time}
                 </li>
-              ))}
+              ))} */}
+              Collecting Data...
             </ul>
           </div>
         </div>

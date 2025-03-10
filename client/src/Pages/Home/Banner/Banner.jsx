@@ -8,14 +8,15 @@ import "swiper/css/autoplay";
 
 import { Autoplay, Pagination, Navigation } from 'swiper';
 
-import slide1 from '../../../assets/home/slide-1.webp';
-import slide2 from '../../../assets/home/slide-2.webp';
-import slide3 from '../../../assets/home/slide-3.webp';
-import slide4 from '../../../assets/home/slide-4.webp';
-import slide5 from '../../../assets/home/slide-5.webp';
-import slide6 from '../../../assets/home/slide-6.webp';
-import slide7 from '../../../assets/home/slide-7.webp';
-import slide8 from '../../../assets/home/slide-8.webp';
+import slide1 from '../../../assets/home/slide-1.png';
+import slide2 from '../../../assets/home/slide-2.png';
+import slide3 from '../../../assets/home/slide-3.png';
+import slide4 from '../../../assets/home/slide-4.png';
+import slide5 from '../../../assets/home/slide-5.png';
+import slide6 from '../../../assets/home/slide-7.png';
+import slide7 from '../../../assets/home/slide-7.png';
+
+
 
 
 import BannerSlider from './BannerSlider';
@@ -39,7 +40,7 @@ const Banner = () => {
                     }}
                     navigation={true}
                     autoplay={{
-                        delay: 7000,
+                        delay: 3000,
                         disableOnInteraction: false,
                     }}
                     modules={[Pagination, Navigation, Autoplay]}
@@ -66,9 +67,7 @@ const Banner = () => {
                     <SwiperSlide>
                         <BannerSlider img={slide7}></BannerSlider>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <BannerSlider img={slide8}></BannerSlider>
-                    </SwiperSlide>
+                    
 
                 </Swiper>
             </div>

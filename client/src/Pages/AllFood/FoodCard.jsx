@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const FoodCard = ({ food }) => {
@@ -13,10 +13,10 @@ const FoodCard = ({ food }) => {
       </div>
       <div className="p-5 border-t-4 border-orange-500/500 text-center">
         <h2 className="text-xl font-bold text-gray-900">{food.foodName}</h2>
-        <p className="text-orange-500 font-semibold text-lg">${food.price}.00</p>
+        <p className="text-orange-500 font-semibold text-lg">€{food.price}</p>
         <Link to={`/details/${food._id}`}>
         <button className="mt-4 btn-primary-styles  btn btn-sm rounded-none border-none">
-          Details
+          View Details
         </button></Link>
       </div>
     </div>

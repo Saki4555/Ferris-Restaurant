@@ -1,0 +1,101 @@
+[
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Tomato cream soup",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Soups",
+    "foodName": "Tomato Soup",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "5.50",
+    "quantity": "50"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Fresh vegetable soup",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Soups",
+    "foodName": "Vegetable Soup",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "6.00",
+    "quantity": "50"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Onion soup",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Soups",
+    "foodName": "Onion Soup",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "6.50",
+    "quantity": "40"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Fish soup with various fish and vegetable strips",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Soups",
+    "foodName": "Fish Soup",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "12.50",
+    "quantity": "35"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Salad with fresh sheep's cheese and homemade dressing",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Salads",
+    "foodName": "Pecorino Salad",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "10.30",
+    "quantity": "40"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Large mixed salad with homemade dressing",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Salads",
+    "foodName": "Mixed Salad",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "9.50",
+    "quantity": "45"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Large mixed salad with tuna",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Salads",
+    "foodName": "Tuna Salad",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "12.50",
+    "quantity": "35"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Arugula salad with cherry tomatoes and freshly grated Parmesan",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Salads",
+    "foodName": "Arugula Salad",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "13.50",
+    "quantity": "40"
+  },
+  {
+    "addedBy": "Ferris Osteria",
+    "description": "Large mixed salad with rosemary, carrots, chicken breast strips, and cherry tomatoes",
+    "email": "contact@ferrisosteria.com",
+    "foodCategory": "Salads",
+    "foodName": "Chicken Salad",
+    "img": "https://i.ibb.co/4g0smGYM/Carpaccio.jpg",
+    "origin": "Italy",
+    "price": "13.50",
+    "quantity": "40"
+  }
+]

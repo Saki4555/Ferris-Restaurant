@@ -1,0 +1,146 @@
+[
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Spaghetti with ham in cream sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Spaghetti Carbonara",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "9.60",
+      "quantity": "50"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Spaghetti with shrimp, red pepper in lobster sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Spaghetti Pavarotti",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "10.70",
+      "quantity": "40"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Spaghetti with garlic and olive oil",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Spaghetti Aglio e Olio",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "8.50",
+      "quantity": "55"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Spaghetti with beef fillet tips, fresh mushrooms in a delicate cream sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Spaghetti Don Ferris",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "11.90",
+      "quantity": "45"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Penne with olives and garlic in a spicy tomato sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Penne Arrabiata",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "11.90",
+      "quantity": "50"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Penne pasta in Gorgonzola sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Penne Gorgonzola",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "9.50",
+      "quantity": "50"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Penne with beef fillet tips, fresh mushrooms in a delicate cream sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Penne Mammamia",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "11.30",
+      "quantity": "40"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Tagliatelle with sun-dried tomatoes, arugula, garlic, and grated sheep cheese",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Tagliatelle Verde",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "10.00",
+      "quantity": "35"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Tagliatelle with salmon, zucchini, pink cream sauce, and lobster sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Tagliatelle Salmone",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "13.80",
+      "quantity": "30"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Stuffed pasta with ham in cream sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Tortellini alla Panna",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "9.70",
+      "quantity": "40"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Stuffed pasta with cheese filling in Gorgonzola sauce",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Tortellini Gorgonzola",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "10.80",
+      "quantity": "45"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Homemade baked pasta gratinated with cheese",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Lasagne al Forno (Minced Meat)",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "11.50",
+      "quantity": "50"
+    },
+    {
+      "addedBy": "Ferris Osteria",
+      "description": "Homemade baked pasta gratinated with cheese",
+      "email": "contact@ferrisosteria.com",
+      "foodCategory": "Classic Pasta",
+      "foodName": "Lasagne al Forno (Salmon)",
+      "img": "https://i.ibb.co/Wvzssyxd/10.png",
+      "origin": "Italy",
+      "price": "11.80",
+      "quantity": "50"
+    }
+  ]
+  

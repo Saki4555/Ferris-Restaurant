@@ -1,23 +1,24 @@
 import { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import logo from '../../assets/logo/logo-sq.jpg'
+import UserDropDown from "../../components/shared/UserDropDown";
 
 const Navber = () => {
-  const { logout, user } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const {  user } = useContext(AuthContext);
 
-  const handleLogout = () => {
-    logout()
-      .then((res) => {
-        navigate("/");
-      })
-      .catch();
-  };
+
+  // const handleLogout = () => {
+  //   logout()
+  //     .then((res) => {
+  //       navigate("/");
+  //     })
+  //     .catch();
+  // };
 
   const links = (
     <>
-      <li className="tracking-wider font-medium font-jost uppercase hover:scale-105">
+      <li className="tracking-wider text-sm font-medium font-jost uppercase hover:scale-105">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -29,7 +30,7 @@ const Navber = () => {
           Home
         </NavLink>
       </li>
-      <li className="tracking-wider font-medium font-jost uppercase hover:scale-105">
+      <li className="tracking-wider text-sm font-medium font-jost uppercase hover:scale-105">
         <NavLink
           to="/allfood"
           className={({ isActive }) =>
@@ -41,7 +42,7 @@ const Navber = () => {
           All Food
         </NavLink>
       </li>
-      <li className="tracking-wider font-medium font-jost uppercase hover:scale-105">
+      <li className="tracking-wider text-sm font-medium font-jost uppercase hover:scale-105">
         <NavLink
           to="/Blog"
           className={({ isActive }) =>
@@ -53,7 +54,7 @@ const Navber = () => {
           Blog
         </NavLink>
       </li>
-      <li className="tracking-wider font-medium font-jost uppercase hover:scale-105">
+      <li className="tracking-wider text-sm font-medium font-jost uppercase hover:scale-105">
         <NavLink
           to="/about"
           className={({ isActive }) =>
@@ -65,7 +66,7 @@ const Navber = () => {
           About
         </NavLink>
       </li>
-      <li className="tracking-wider font-medium font-jost uppercase hover:scale-105">
+      {/* <li className="tracking-wider font-medium font-jost uppercase hover:scale-105">
         <NavLink
           to="/review"
           className={({ isActive }) =>
@@ -76,27 +77,15 @@ const Navber = () => {
         >
           Feedback
         </NavLink>
-      </li>
+      </li> */}
     </>
   );
 
-  const profile = (
-    <>
-      <li>
-        <NavLink to="/addfood">Add a Food Iteams</NavLink>
-      </li>
-      <li>
-        <NavLink to="/addedfood">My added food items</NavLink>
-      </li>
-      <li>
-        <NavLink to="/orderedfood">My ordered food items</NavLink>
-      </li>
-    </>
-  );
+  
 
   return (
     <div className="shadow-xl sticky z-[999] top-0">
-      <div className="navbar bg-ferris-nav  px-10">
+      <div className="navbar bg-white  px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -138,43 +127,10 @@ const Navber = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full">
-                    <img
-                      className="rounded-full flex justify-center items-center mx-auto"
-                      src={user.photoURL}
-                      alt="user profile"
-                    />
-                  </div>
-                </label>
-                <ul
-                  tabIndex={0}
-                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <button
-                      className="text-red-600 font-bold"
-                      onClick={handleLogout}
-                    >
-                      Log Out
-                    </button>
-                  </li>
-                  <li>
-                    <a className="justify-between">
-                      <h2 className="text-green-500 font-semibold">
-                        {user.displayName}
-                      </h2>
-                    </a>
-                  </li>
-                  <div className="bg-sky-200 rounded-2xl shadow-2xl py-4 font-semibold">
-                    {profile}
-                  </div>
-                </ul>
-              </div>
+             <UserDropDown />
             </>
           ) : (
-            <NavLink className="btn btn-ghost capitalize" to="/login">
+            <NavLink className="btn bg-ferris-prim hover:bg-ferris-ter text-ferris-sec capitalize" to="/login">
               Login
             </NavLink>
           )}

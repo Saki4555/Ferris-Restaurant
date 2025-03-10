@@ -11,7 +11,7 @@ const BannerSlider = ({ img }) => {
                 }}>
                 <div
                     
-                    className="flex flex-col backdrop-blur-3xl   rounded p-4  justify-center items-center">
+                    className="flex flex-col   rounded p-4  justify-center items-center">
                     <h1
                         className=" text-center  text-5xl text-white font-bold font-cormorant drop-shadow-lg">Where Every Bite is a Masterpiece
                     </h1>

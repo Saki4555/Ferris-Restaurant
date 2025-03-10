@@ -15,6 +15,9 @@ import Error from "../Pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";
 import About from "../Pages/About/About";
 import Review from "../Pages/Feedback/Review/Review";
+import DashboardLayout from "../Layout/DashboardLayout";
+
+import ManageFoods from "../dashboard/admin/ManageFoods";
 
 const router = createBrowserRouter([
     {
@@ -78,6 +81,20 @@ const router = createBrowserRouter([
       ]
     },
     {
+       path: '/dashboard',
+       element: <DashboardLayout/>,
+       children: [
+        {
+          path: '/dashboard/overview',
+       element: <p>Hi</p>,
+        },
+        {
+          path: '/dashboard/allfooditems',
+          element: <ManageFoods />
+        },
+       ]
+    },
+    {
       path: '*',
       element: <Error></Error>
     }
@@ -85,4 +102,3 @@ const router = createBrowserRouter([
 
   export default router;
 
-  // ${import.meta.env.VITE_BASE_URL}

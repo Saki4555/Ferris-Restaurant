@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Foods from "./Foods";
+
 import Meta from "../Shared/Meta";
 import FoodCard from "./FoodCard";
 import AllFoodBanner from "./AllFoodBanner";
@@ -13,7 +13,7 @@ const AllFood = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPages = 9;
   console.log(foods);
-  console.log(import.meta.env.VITE_BASE_URL);
+
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BASE_URL}/allfoods`)
@@ -53,6 +53,8 @@ const AllFood = () => {
 
   const changePage = (id) => {
     setCurrentPage(id);
+    window.scrollTo({ top: 350, behavior: "smooth" });
+
   };
 
   return (
@@ -71,55 +73,51 @@ const AllFood = () => {
             <AllFoodBanner />
           </motion.div>
 
-         <div className="container mx-auto px-20 py-10">
-         <div className="lg:flex mb-5 ">
-            <div className="w-3/4"></div>
-
-            <div className="lg:w-1/4">
+          <div className="container mx-auto px-20 py-10">
+            <div className="flex pb-5 gap-2 justify-center md:justify-end">
               <input
                 type="text"
-                placeholder="name"
-                className="input input-bordered  pr-16"
+                placeholder="Search Food"
+                className="input w-full md:w-1/4  input-sm rounded-none input-error"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
-            </div>
-            <button
-              onClick={handleSearch}
-              className="text-blue-600 btn bg-orange-200 lg:ml-2"
-            >
-              Search
-            </button>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={controls}
-            className="grid md:grid-cols-3 grid-cols-1 gap-5"
-          >
-            {records ? (
-              records.map((food) => (
-                <FoodCard food={food} key={food._id}></FoodCard>
-              ))
-            ) : (
-              <span className="loading loading-spinner loading-lg"></span>
-            )}
-          </motion.div>
-
-          <div className="join mt-10">
-            {numbers.map((n, i) => (
               <button
-                onClick={() => changePage(n)}
-                key={i}
-                className={`join-item btn ${
-                  currentPage === n ? "btn-active" : ""
-                }`}
+                onClick={handleSearch}
+                className="btn rounded-none btn-sm  text-ferris-sec bg-ferris-prim hover:scale-95 hover:bg-ferris-prim/90 lg:ml-2"
               >
-                {n}
+                Search
               </button>
-            ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={controls}
+              className="grid md:grid-cols-3 grid-cols-1 gap-5"
+            >
+              {records ? (
+                records.map((food) => (
+                  <FoodCard food={food} key={food._id}></FoodCard>
+                ))
+              ) : (
+                <span className="loading loading-spinner loading-lg"></span>
+              )}
+            </motion.div>
+
+            <div className="join mt-10">
+              {numbers.map((n, i) => (
+                <button
+                  onClick={() => changePage(n)}
+                  key={i}
+                  className={`join-item btn ${
+                    currentPage === n ? "btn-active" : ""
+                  }`}
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
           </div>
-         </div>
         </div>
       </div>
     </>

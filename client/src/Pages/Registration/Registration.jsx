@@ -78,7 +78,7 @@ const Registration = () => {
                 <div className="hero min-h-screen bg-white shadow-2xl rounded-2xl max-w-lg mx-auto">
                     <div className="hero-content flex-col ">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-3xl font-bold text-gray-600"><span className="text-red-800">Tastebud Tavern </span>Sign Up</h1>
+                            <h1 className="text-3xl text-center font-cormorant font-bold text-gray-600"><span className="text-ferris-prim">Ferris </span>Sign Up</h1>
                             <img className="h-1/2 w-1/2 mx-auto mt-2" src="https://i.ibb.co/sFCdQRR/login.png" alt="" />
                         </div>
                         <div className="card flex-shrink-0 w-full">
@@ -108,7 +108,7 @@ const Registration = () => {
                                     <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn text-white border-none bg-[#FF3811]">Login</button>
+                                    <button className="btn text-white border-none bg-ferris-prim hover:bg-black">Sign In</button>
                                     {
                                         error && <p className="text-red-600 pt-4">{error}</p>
                                     }
@@ -118,7 +118,7 @@ const Registration = () => {
                                 </div>
                             </form>
                             <div>
-                                <p className='my-5'>Don't have na Account? Please <Link to='/login' className='text-red-500'>Login</Link></p>
+                                <p className='my-5'>Already have an Account? Please <Link to='/login' className='text-red-500'>Login</Link></p>
                             </div>
                         </div>
                     </div>

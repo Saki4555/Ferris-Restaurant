@@ -19,7 +19,7 @@ const AddAFood = () => {
                 setUsers(foundUser);
             }
         })
-    } ,[])
+    } ,[user.email])
     console.log(users);
 
     const handleAddItem = e => {
