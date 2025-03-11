@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-
+import toast from 'react-hot-toast';
 const AddFood = () => {
   const {
     register,
@@ -20,20 +20,20 @@ const AddFood = () => {
     },
     onSuccess: (data) => {
       console.log("res data", data);
-      alert("Food added successfully!");
+      toast.success("Food added successfully!");
       // reset(); // Reset form after successful submission
    setTimeout(() => {
       mutation.reset();
-   }, 2000)
+   }, 1000)
     },
     onError: (error) => {
       console.error("Error adding food:", error);
-      alert("Failed to add food!");
+      toast.error("Failed to add food!");
     },
   });
 
   const onSubmit = (data) => {
-    // console.log("Food Data Submitted:", data);
+    
     const foodData = { ...data, totalSold: 0 };
     mutation.mutate(foodData);
     console.log({ foodData });
@@ -151,7 +151,7 @@ const AddFood = () => {
           </div>
 
           {/* Image URL */}
-          <div>
+          {/* <div>
             <label className="block text-lg font-semibold">Image URL</label>
             <input
               {...register("img", { required: "Image URL is required" })}
@@ -161,8 +161,8 @@ const AddFood = () => {
             {errors.img && (
               <p className="text-red-500 text-sm">{errors.img.message}</p>
             )}
-          </div>
-          {/* <div>
+          </div> */}
+          <div>
             <label className="block text-lg font-semibold">Image URL</label>
             <input
               {...register("img", {
@@ -179,7 +179,7 @@ const AddFood = () => {
             {errors.img && (
               <p className="text-red-500 text-sm">{errors.img.message}</p>
             )}
-          </div> */}
+          </div>
 
           {/* Ingredients */}
           <div>
@@ -187,9 +187,11 @@ const AddFood = () => {
             <input
               {...register("ingredients", {
                 required: "Ingredients are required",
+                setValueAs: (value) => value.split(",").map((item) => item.trim()),
               })}
+              
               className="input input-bordered w-full p-3 rounded-lg"
-              placeholder="Enter ingredients"
+              placeholder="Enter ingredients separated by commas (e.g., Cheese, Tomato, Basil)"
             />
             {errors.ingredients && (
               <p className="text-red-500 text-sm">

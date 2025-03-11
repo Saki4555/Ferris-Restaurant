@@ -6,7 +6,7 @@ const DashboardUserDropdown = () => {
     const [userData] = useUserData();
 
     return (
-        <Menu as="div" className="relative inline-block text-left">
+        <Menu as="div" className="relative z-[999] inline-block text-left">
             {/* Dropdown Button - User Avatar */}
             <MenuButton className="focus:outline-none">
                 <img src={userData.photo} alt="User Avatar" className="rounded-full w-10 h-10 border border-gray-300 hover:border-gray-400" />

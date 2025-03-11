@@ -1,11 +1,12 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { FiUser, FiSettings, FiLogOut, FiGrid } from "react-icons/fi"; 
 
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import useUserData from "../../hooks/useUserData";
 import useAuth from "../../hooks/useAuth";
 
 const UserDropdown = () => {
+    const {user} = useAuth();
     const [userData] = useUserData();
     const {logout} = useAuth();
     const navigate = useNavigate()
@@ -30,8 +31,8 @@ const UserDropdown = () => {
                 
                 {/* User Info Section (No Image & Icon) */}
                 <div className="border-b border-gray-300 pb-3">
-                    <p className="font-semibold text-gray-800">{userData.name}</p>
-                    <p className="text-sm text-gray-500">{userData.email}</p>
+                    <p className="font-semibold text-gray-800">{user?.name}</p>
+                    <p className="text-sm text-gray-500">{user?.email}</p>
                 </div>
 
                 {/* Menu Items */}

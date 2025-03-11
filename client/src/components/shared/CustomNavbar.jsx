@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import UserDropDown from "./UserDropDown";
-import logo from "../../assets/logo/logo-sq.jpg";
+import logo from "../../assets/logo/logo-rec.jpg";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 
 const CustomNavbar = () => {
@@ -91,7 +91,7 @@ const CustomNavbar = () => {
         {/* Logo (Hidden on Mobile) */}
         <div className="hidden lg:flex items-center">
           <Link to="/">
-            <img className="w-10 rounded-full" src={logo} alt="Ferris" />
+            <img className="w-28 rounded-full" src={logo} alt="Ferris" />
           </Link>
         </div>
 

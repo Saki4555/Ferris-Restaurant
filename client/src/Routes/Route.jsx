@@ -19,6 +19,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 
 import ManageFoods from "../dashboard/admin/ManageFoods";
 import AddFood from "../dashboard/admin/AddFood";
+import OverviewContent from "../dashboard/overview/OverviewContent";
 
 const router = createBrowserRouter([
     {
@@ -87,7 +88,7 @@ const router = createBrowserRouter([
        children: [
         {
           path: '/dashboard/overview',
-       element: <p>Hi</p>,
+       element: <OverviewContent />
         },
         {
           path: '/dashboard/allfooditems',
