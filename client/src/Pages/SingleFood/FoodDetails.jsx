@@ -1,7 +1,13 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import ComingSoonModal from "../../components/main-modals/ComingSoonModal";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import "react-loading-skeleton/dist/skeleton.css";
 const FoodDetails = ({ food }) => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
   const [quantity, setQuantity] = useState(1);
+   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="flex flex-col md:flex-row items-center md:items-start bg-white p-6  max-w-5xl mx-auto py-20">
@@ -42,7 +48,7 @@ const FoodDetails = ({ food }) => {
             onChange={(e) => setQuantity(e.target.value)}
             className="w-16 p-2 border border-gray-300 rounded-md text-center"
           />
-          <button className="ml-4 bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg font-semibold">
+          <button onClick={() => setIsOpen(true)} className="ml-4 bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg font-semibold">
             Add to cart
           </button>
         </div>
@@ -60,6 +66,9 @@ const FoodDetails = ({ food }) => {
           </p>
         </div>
       </div>
+      <ComingSoonModal isOpen={isOpen} setIsOpen={setIsOpen}/>
+          <Skeleton width={150} height={150} count={3} />
+
     </div>
   );
 };

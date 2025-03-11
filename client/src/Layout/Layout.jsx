@@ -3,6 +3,7 @@ import  { Toaster } from 'react-hot-toast';
 import Footer from "../Pages/Shared/Footer";
 import CustomNavbar from "../components/shared/CustomNavbar";
 
+
 const Layout = () => {
     return (
         <div className="p-0 m-0">
@@ -11,6 +12,7 @@ const Layout = () => {
             <Outlet></Outlet>
             <Toaster />
             <Footer></Footer>
+            
         </div>
     );
 };

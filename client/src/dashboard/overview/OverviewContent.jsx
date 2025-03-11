@@ -2,8 +2,8 @@
 
 const OverviewContent = () => {
     return (
-        <div>
-            overview content
+        <div className="p-20 text-xl">
+            Getting Ready...
         </div>
     );
 };

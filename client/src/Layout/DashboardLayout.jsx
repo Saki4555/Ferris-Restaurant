@@ -6,12 +6,14 @@ import  { Toaster } from 'react-hot-toast';
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [smallScreenSidebarOpen, setSmallScreenSidebarOpen] = useState(false);
+  console.log(smallScreenSidebarOpen);
  
   return (
-    <div className="md:flex">
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+    <div className="relative md:flex">
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} smallScreenSidebarOpen={smallScreenSidebarOpen} setSmallScreenSidebarOpen={setSmallScreenSidebarOpen} />
       <div className="md:flex-1 h-screen overflow-y-scroll">
-        <DashboardNav />
+        <DashboardNav smallScreenSidebarOpen={smallScreenSidebarOpen} setSmallScreenSidebarOpen={setSmallScreenSidebarOpen} />
       <Outlet />
       </div>
       <Toaster />

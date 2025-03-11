@@ -6,6 +6,9 @@ import FoodCard from "./FoodCard";
 import AllFoodBanner from "./AllFoodBanner";
 
 const AllFood = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   const [foods, setFoods] = useState([]);
   const [filter, setFilter] = useState([]);
   const [query, setQuery] = useState("");

@@ -12,7 +12,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 5
+      "preparationTime": 5,
+      "totalOrders": 0
     },
     {
       "foodName": "Classic & Craft Cocktails",
@@ -27,7 +28,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 7
+      "preparationTime": 7,
+      "totalOrders": 0
     },
     {
       "foodName": "Classic Italian Cuisine",
@@ -42,7 +44,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 20
+      "preparationTime": 20,
+      "totalOrders": 0
     },
     {
       "foodName": "Delicious Gourmet Plate",
@@ -57,7 +60,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 30
+      "preparationTime": 30,
+      "totalOrders": 0
     },
     {
       "foodName": "Family & Friends Pizza Feast",
@@ -72,7 +76,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 25
+      "preparationTime": 25,
+      "totalOrders": 0
     },
     {
       "foodName": "Festive Cheers",
@@ -87,7 +92,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 10
+      "preparationTime": 10,
+      "totalOrders": 0
     },
     {
       "foodName": "Mediterranean Grill Plate",
@@ -102,7 +108,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 35
+      "preparationTime": 35,
+      "totalOrders": 0
     },
     {
       "foodName": "Mediterraner Salat",
@@ -117,7 +124,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 10
+      "preparationTime": 10,
+      "totalOrders": 0
     },
     {
       "foodName": "Signature Pasta with White Wine",
@@ -132,7 +140,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 22
+      "preparationTime": 22,
+      "totalOrders": 0
     },
     {
       "foodName": "Soul-Warming Soup",
@@ -147,7 +156,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 15
+      "preparationTime": 15,
+      "totalOrders": 0
     },
     {
       "foodName": "The Ultimate Pizza Night",
@@ -162,7 +172,8 @@
       "rating": 0,
       "reviews": 0,
       "availability": true,
-      "preparationTime": 30
+      "preparationTime": 30,
+      "totalOrders": 0
     }
   ]
   

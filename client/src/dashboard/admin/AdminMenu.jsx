@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FaTachometerAlt, FaUsers, FaBoxOpen, FaChartLine, FaCog,  } from "react-icons/fa";
 import { MdOutlineNoteAdd } from "react-icons/md";
-const AdminMenu = ({ isOpen }) => {
+const AdminMenu = ({ isOpen, setSmallScreenSidebarOpen}) => {
   const Menus = [
     { path: "/dashboard/overview", icon: FaTachometerAlt, title: "Overview" },
     // { path: "/", icon: FaUsers, title: "Manage Users" },
@@ -16,16 +16,17 @@ const AdminMenu = ({ isOpen }) => {
       {Menus.map((menu, index) => {
         const Icon = menu.icon;
         return (
-          <li key={index}>
+          <li className="hover:bg-ferris-prim group hover:text-ferris-sec text-ferris-ter" onClick={() => setSmallScreenSidebarOpen(prev => !prev)} key={index}>
             <NavLink
   
             to={menu.path}
             className={({ isActive }) =>
-              `flex items-center gap-x-4 hover:bg-ferris-ter text-ferris-sec rounded-md p-2 text-sm cursor-pointer transition-all duration-200  ${isActive ? "bg-ferris-ter" : ""}`
+              `flex items-center gap-x-4  rounded-md p-2 text-sm cursor-pointer transition-all duration-200  ${isActive ? "bg-ferris-prim text-ferris-sec" : ""}`
             }
           >
             <Icon className="text-xl" />
-            <span className={`${!isOpen && "hidden"} origin-left duration-200`}>
+            
+            <span className={`${!isOpen && "hidden"} origin-left`}>
               {menu.title}
             </span>
           </NavLink>
