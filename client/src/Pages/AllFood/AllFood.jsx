@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+
 
 import Meta from "../Shared/Meta";
 import FoodCard from "./FoodCard";
@@ -28,17 +27,9 @@ const AllFood = () => {
     setFilter(foodItems);
   };
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  });
+ 
 
-  const controls = useAnimation();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1 });
-    }
-  }, [controls, inView]);
 
   const lastIndex = currentPage * recordsPerPages;
   const firstIndex = lastIndex - recordsPerPages;
@@ -61,17 +52,15 @@ const AllFood = () => {
     <>
       <Meta title={"allfood"} />
       <div className="bg-ferris-sec/95">
-        <div ref={ref} className="">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={controls}
-            className="text-center"
+        <div  className="">
+          <div
+          
           >
             {/* <h2 className="lg:text-5xl text-3xl font-bold"><span className="text-[#FF3811]">Tastebud Tavern</span>'s Culinary Extravaganza <br /> A Symphony of Flavors</h2>
           <p className="mb-10 text-gray-400 mt-10 md:mx-20">Welcome to Tastebud Tavern, where our menu is a culinary masterpiece that promises to enchant your palate. Explore a world of taste sensations, from savory starters to divine desserts, each dish meticulously crafted to elevate your dining experience. Join us on a gastronomic journey like no other, where every bite tells a story of passion and flavor innovation.</p> */}
 
             <AllFoodBanner />
-          </motion.div>
+          </div>
 
           <div className="container mx-auto px-20 py-10">
             <div className="flex pb-5 gap-2 justify-center md:justify-end">
@@ -90,9 +79,8 @@ const AllFood = () => {
               </button>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={controls}
+            <div
+             
               className="grid md:grid-cols-3 grid-cols-1 gap-5"
             >
               {records ? (
@@ -102,7 +90,7 @@ const AllFood = () => {
               ) : (
                 <span className="loading loading-spinner loading-lg"></span>
               )}
-            </motion.div>
+            </div>
 
             <div className="join mt-10">
               {numbers.map((n, i) => (

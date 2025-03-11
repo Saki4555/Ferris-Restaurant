@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { FaTachometerAlt, FaUsers, FaBoxOpen, FaChartLine, FaCog } from "react-icons/fa";
-
+import { FaTachometerAlt, FaUsers, FaBoxOpen, FaChartLine, FaCog,  } from "react-icons/fa";
+import { MdOutlineNoteAdd } from "react-icons/md";
 const AdminMenu = ({ isOpen }) => {
   const Menus = [
     { path: "/dashboard/overview", icon: FaTachometerAlt, title: "Overview" },
     // { path: "/", icon: FaUsers, title: "Manage Users" },
     { path: "/dashboard/allfooditems", icon: FaBoxOpen, title: "Manage Foods" },
+    { path: "/dashboard/adminaddfood", icon: MdOutlineNoteAdd, title: "Add Food" },
     // { path: "/", icon: FaChartLine, title: "Sales Analytics" },
     // { path: "/", icon: FaCog, title: "Settings" },
   ];

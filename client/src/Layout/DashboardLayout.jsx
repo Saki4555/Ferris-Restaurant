@@ -9,7 +9,7 @@ const DashboardLayout = () => {
   return (
     <div className="flex">
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="flex-1 h-screen">
+      <div className="flex-1 h-screen overflow-y-scroll">
         <DashboardNav />
       <Outlet />
       </div>

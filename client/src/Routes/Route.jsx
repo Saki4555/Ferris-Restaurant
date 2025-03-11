@@ -18,6 +18,7 @@ import Review from "../Pages/Feedback/Review/Review";
 import DashboardLayout from "../Layout/DashboardLayout";
 
 import ManageFoods from "../dashboard/admin/ManageFoods";
+import AddFood from "../dashboard/admin/AddFood";
 
 const router = createBrowserRouter([
     {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
           path: '/dashboard/allfooditems',
           element: <ManageFoods />
         },
+        {
+          path: '/dashboard/adminaddfood',
+          element: <AddFood />
+        }
        ]
     },
     {

@@ -1,72 +1,57 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProvider";
-import {  NavLink, useNavigate } from "react-router-dom";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { FiUser, FiSettings, FiLogOut, FiGrid } from "react-icons/fi"; 
 
+import { Link, useNavigate } from "react-router-dom";
+import useUserData from "../../hooks/useUserData";
+import useAuth from "../../hooks/useAuth";
 
-const UserDropDown = () => {
-    const {user,logout} = useContext(AuthContext);
-    const navigate = useNavigate();
+const UserDropdown = () => {
+    const [userData] = useUserData();
+    const {logout} = useAuth();
+    const navigate = useNavigate()
 
     const handleLogout = () => {
-        logout()
-          .then(() => {
-            navigate("/");
-          })
-          .catch();
-      };
-      const profile = (
-        <>
-          <li>
-            <NavLink to="/addfood">Add a Food Iteams</NavLink>
-          </li>
-          <li>
-            <NavLink to="/addedfood">My added food items</NavLink>
-          </li>
-          <li>
-            <NavLink to="/orderedfood">My ordered food items</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-          </li>
-        </>
-      );
+    logout()
+      .then(() => {
+        navigate("/");
+      })
+      .catch();
+  };
+
     return (
-        <div className="dropdown dropdown-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            <img
-              className="rounded-full flex justify-center items-center mx-auto"
-              src={user.photoURL}
-              referrerPolicy="no-referrer"
-              alt="user profile"
-            />
-          </div>
-        </label>
-        <ul
-          tabIndex={0}
-          className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-        >
-          <li>
-            <button
-              className="text-red-600 font-bold"
-              onClick={handleLogout}
-            >
-              Log Out
-            </button>
-          </li>
-          <li>
-            <a className="justify-between">
-              <h2 className="text-green-500 font-semibold">
-                {user.displayName}
-              </h2>
-            </a>
-          </li>
-          <div className="bg-sky-200 rounded-2xl shadow-2xl py-4 font-semibold">
-            {profile}
-          </div>
-        </ul>
-      </div>
+      <Menu as="div" className="relative inline-block text-left">
+            {/* Dropdown Button - User Avatar */}
+            <MenuButton className="focus:outline-none">
+                <img src={userData.photo} alt="User Avatar" className="rounded-full w-10 h-10 border border-gray-300 hover:border-gray-400" />
+            </MenuButton>
+
+            {/* Dropdown Menu Items */}
+            <MenuItems className="absolute right-0 mt-4 w-56 bg-white px-4 py-3 mr-5 rounded-md shadow-2xl border border-gray-200">
+                
+                {/* User Info Section (No Image & Icon) */}
+                <div className="border-b border-gray-300 pb-3">
+                    <p className="font-semibold text-gray-800">{userData.name}</p>
+                    <p className="text-sm text-gray-500">{userData.email}</p>
+                </div>
+
+                {/* Menu Items */}
+                <MenuItem as="button" onClick={() => navigate('/dashboard')} className=" px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
+                    <FiGrid className="text-lg text-gray-500" /> Dashboard
+                </MenuItem>
+                {/* <MenuItem as="a" href="/profile" className=" px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
+                    <FiUser className="text-lg text-gray-500" /> Profile
+                </MenuItem> */}
+                {/* <MenuItem as="a" href="/settings" className=" px-4 py-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
+                    <FiSettings className="text-lg text-gray-500" /> Settings
+                </MenuItem> */}
+
+                {/* Logout Button */}
+                <MenuItem as="button" onClick={handleLogout} className=" w-full text-left px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-red-500 hover:bg-red-100">
+                    <FiLogOut className="text-lg" /> Log Out
+                </MenuItem>
+            </MenuItems>
+        </Menu>
     );
 };
 
-export default UserDropDown;
+export default UserDropdown;

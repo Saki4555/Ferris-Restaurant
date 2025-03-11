@@ -22,10 +22,10 @@ const DashboardUserDropdown = () => {
                 </div>
 
                 {/* Menu Items */}
-                <MenuItem as="a" href="/profile" className="block px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
+                <MenuItem as="a" href="/profile" className=" px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
                     <FiUser className="text-lg text-gray-500" /> Profile
                 </MenuItem>
-                <MenuItem as="a" href="/settings" className="block px-4 py-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
+                <MenuItem as="a" href="/settings" className=" px-4 py-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
                     <FiSettings className="text-lg text-gray-500" /> Settings
                 </MenuItem>
 
@@ -39,4 +39,8 @@ const DashboardUserDropdown = () => {
 };
 
 export default DashboardUserDropdown;
+
+
+
+
 
