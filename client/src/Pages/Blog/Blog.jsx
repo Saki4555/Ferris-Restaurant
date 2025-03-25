@@ -1,7 +1,6 @@
 
 import Meta from "../Shared/Meta";
 
-import { Parallax } from "react-parallax";
 
 import BlogBanner from "./BlogBanner";
 import { BLOG_POSTS } from "../../constants";

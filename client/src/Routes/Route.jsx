@@ -14,97 +14,121 @@ import Update from "../Pages/Profile/AddedFood/Update";
 import Error from "../Pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";
 import About from "../Pages/About/About";
-import Review from "../Pages/Feedback/Review/Review";
+
 import DashboardLayout from "../Layout/DashboardLayout";
 
 import ManageFoods from "../dashboard/admin/ManageFoods";
 import AddFood from "../dashboard/admin/AddFood";
 import OverviewContent from "../dashboard/overview/OverviewContent";
+import CartPage from "../Pages/cart/CartPage";
+import Success from "../Pages/Success";
+import Cancel from "../Pages/Cancel";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout></Layout>,
-      children: [
-        {
-          path: '/',
-          element: <Home></Home>
-        },
-        {
-          path: '/blog',
-          element: <Blog></Blog>
-        },
-        {
-          path: '/allfood',
-          element: <AllFood></AllFood>,
-        },
-        {
-          path: '/about',
-          element: <About/>
-        },
-        {
-          path: '/review',
-          element: <Review/>
-        },
-        {
-          path: '/login',
-          element: <Login></Login>
-        },
-        {
-          path: '/register',
-          element: <Registration></Registration>
-        },
-        {
-          path: '/addfood',
-          element: <AddAFood></AddAFood>
-        },
-        {
-          path: '/addedfood',
-          element: <AddedFood></AddedFood>
-        },
-        {
-          path: '/orderedfood',
-          element: <PrivateRoute><OrderedFood></OrderedFood></PrivateRoute>
-        },
-        {
-          path: '/details/:id',
-          element: <SingleFood></SingleFood>,
-          // loader: async({params}) => await fetch(`${import.meta.env.VITE_BASE_URL}/allfoods/${params.id}`)
-        },
-        {
-          path: '/order/:id',
-          element: <PrivateRoute><Order></Order></PrivateRoute>,
-          loader: async() => await fetch(`${import.meta.env.VITE_BASE_URL}/users`) 
-        },
-        {
-          path: '/update/:id',
-          element: <PrivateRoute><Update></Update></PrivateRoute>,
-        }
-      ]
-    },
-    {
-       path: '/dashboard',
-       element: <DashboardLayout/>,
-       children: [
-        {
-          path: '/dashboard/overview',
-       element: <OverviewContent />
-        },
-        {
-          path: '/dashboard/allfooditems',
-          element: <ManageFoods />
-        },
-        {
-          path: '/dashboard/adminaddfood',
-          element: <AddFood />
-        }
-       ]
-    },
-    {
-      path: '*',
-      element: <Error></Error>
-    }
-  ]);
+  {
+    path: "/",
+    element: <Layout></Layout>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/allfood",
+        element: <AllFood></AllFood>,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
 
-  export default router;
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Registration></Registration>,
+      },
+      {
+        path: "/addfood",
+        element: <AddAFood></AddAFood>,
+      },
+      {
+        path: "/addedfood",
+        element: <AddedFood></AddedFood>,
+      },
+      {
+        path: "/orderedfood",
+        element: (
+          <PrivateRoute>
+            <OrderedFood></OrderedFood>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/details/:id",
+        element: <SingleFood></SingleFood>,
+        // loader: async({params}) => await fetch(`${import.meta.env.VITE_BASE_URL}/allfoods/${params.id}`)
+      },
+      {
+        path: "/order/:id",
+        element: (
+          <PrivateRoute>
+            <Order></Order>
+          </PrivateRoute>
+        ),
+        loader: async () =>
+          await fetch(`${import.meta.env.VITE_BASE_URL}/users`),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/success",
+        element: <Success />,
+      },
+      {
+        path: "/cancel",
+        element: <Cancel />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/dashboard/overview",
+        element: <OverviewContent />,
+      },
+      {
+        path: "/dashboard/allfooditems",
+        element: <ManageFoods />,
+      },
+      {
+        path: "/dashboard/adminaddfood",
+        element: <AddFood />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
+  },
+]);
 
+export default router;

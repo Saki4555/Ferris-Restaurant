@@ -1,9 +1,9 @@
-import blog1 from '../../assets/blog/blog-1.png';
-import blog2 from '../../assets/blog/blog-2.jpeg';
-import blog3 from '../../assets/blog/blog-3.webp';
-import blog4 from '../../assets/blog/blog-4.webp';
-import blog5 from '../../assets/blog/blog-5.png';
-import { FaUser, FaCalendarAlt, FaTag } from "react-icons/fa"; // Import icons
+import blog1 from '../../assets/blog/blog-1.jpg';
+import blog2 from '../../assets/blog/blog-2.jpg';
+import blog3 from '../../assets/blog/blog-3.jpg';
+import blog4 from '../../assets/blog/blog-4.jpg';
+import blog5 from '../../assets/blog/blog-5.jpg';
+import { FaUser, FaCalendarAlt, FaTag } from "react-icons/fa"; 
 
 const BlogCard = ({ item }) => {
   const imgArr = [blog1, blog2, blog3, blog4, blog5];

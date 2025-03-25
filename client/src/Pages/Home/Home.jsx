@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import Banner from "./Banner/Banner";
-import ChouseUs from "./ChouseUS/ChouseUs";
+
 import Offer from "./Offer/Offer";
 import TopFood from "./TopFood/TopFood";
+import ChooseUs from "./ChouseUS/ChooseUs";
 
 const Home = () => {
 useEffect(() => {
@@ -16,7 +17,7 @@ window.scrollTo(0,0)
       <Banner />
       <TopFood />
       <Offer />
-      <ChouseUs />
+      <ChooseUs />
     </>
   );
 };

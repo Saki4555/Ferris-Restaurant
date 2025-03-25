@@ -13,7 +13,7 @@ import slide2 from '../../../assets/home/slide-2.png';
 import slide3 from '../../../assets/home/slide-3.png';
 import slide4 from '../../../assets/home/slide-4.png';
 import slide5 from '../../../assets/home/slide-5.png';
-import slide6 from '../../../assets/home/slide-7.png';
+import slide6 from '../../../assets/home/slide-6.webp';
 import slide7 from '../../../assets/home/slide-7.png';
 
 
@@ -24,6 +24,7 @@ import BannerSlider from './BannerSlider';
 
 
 import './Banner.css'
+import { FERRIS_BANNERS_INFO } from '../../../constants';
 
 const Banner = () => {
 
@@ -47,25 +48,25 @@ const Banner = () => {
                     className="mySwiper"
                 >
                     <SwiperSlide>
-                        <BannerSlider img={slide1}></BannerSlider>
+                        <BannerSlider info={FERRIS_BANNERS_INFO[0]} img={slide1}></BannerSlider>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <BannerSlider img={slide2}></BannerSlider>
+                        <BannerSlider info={FERRIS_BANNERS_INFO[1]} img={slide2}></BannerSlider>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <BannerSlider img={slide3}></BannerSlider>
+                        <BannerSlider info={FERRIS_BANNERS_INFO[2]} img={slide3}></BannerSlider>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <BannerSlider img={slide4}></BannerSlider>
+                        <BannerSlider info={FERRIS_BANNERS_INFO[3]} img={slide4}></BannerSlider>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <BannerSlider img={slide5}></BannerSlider>
+                        <BannerSlider info={FERRIS_BANNERS_INFO[4]} img={slide5}></BannerSlider>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <BannerSlider img={slide6}></BannerSlider>
+                        <BannerSlider info={FERRIS_BANNERS_INFO[5]} img={slide6}></BannerSlider>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <BannerSlider img={slide7}></BannerSlider>
+                        <BannerSlider info={FERRIS_BANNERS_INFO[6]} img={slide7}></BannerSlider>
                     </SwiperSlide>
                     
 

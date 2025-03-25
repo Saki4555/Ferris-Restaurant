@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import UserDropDown from "./UserDropDown";
 import logo from "../../assets/logo/logo-rec.jpg";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
+import CartIcon from "./CartIcon";
 
 const CustomNavbar = () => {
   const { user } = useContext(AuthContext);
@@ -15,7 +16,7 @@ const CustomNavbar = () => {
   };
 
   const closeMenu = () => {
-    console.log("hello");
+  
     setMenuOpen(false);
   };
 
@@ -73,6 +74,7 @@ const CustomNavbar = () => {
           About
         </NavLink>
       </li>
+     
     </>
   );
 
@@ -89,9 +91,9 @@ const CustomNavbar = () => {
         </button>
 
         {/* Logo (Hidden on Mobile) */}
-        <div className="hidden lg:flex items-center">
+        <div className="flex items-center">
           <Link to="/">
-            <img className="w-28 rounded-full" src={logo} alt="Ferris" />
+            <img className="w-24 md:w-28 rounded-full" src={logo} alt="Ferris" />
           </Link>
         </div>
 
@@ -101,7 +103,7 @@ const CustomNavbar = () => {
         {/* User DropDown/Login on Right */}
         <div>
           {user ? (
-            <UserDropDown />
+            <div className="flex gap-1"><CartIcon></CartIcon> <UserDropDown /></div>
           ) : (
             <NavLink
               className="btn bg-ferris-prim hover:bg-ferris-ter text-ferris-sec capitalize"
@@ -121,7 +123,7 @@ const CustomNavbar = () => {
             : "opacity-0 scale-95 -translate-y-5 pointer-events-none"
         }`}
       >
-        <ul  className="flex bg-white flex-col items-center gap-4 py-4">{links}</ul>
+        <ul  className="flex bg-white flex-col shadow-2xl items-center gap-4 py-4">{links}</ul>
         <div onClick={() =>{
           closeMenu()
           console.log('here');

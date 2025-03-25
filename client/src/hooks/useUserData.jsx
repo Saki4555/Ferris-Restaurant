@@ -13,7 +13,7 @@ const useUserData = () => {
             return res.data || {}; // Ensure an empty object if the response is null/undefined
         },
         enabled: !!user?.email, // Only fetch if email exists
-        staleTime: 1000 * 60 * 5, // ⏳ Data remains fresh for 5 minutes (adjust as needed)
+        staleTime: 1000 * 60 * 5, //  Data remains fresh for 5 minutes (adjust as needed)
     });
 
     return [userData, loading, refetch];

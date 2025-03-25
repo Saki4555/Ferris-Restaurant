@@ -1,13 +1,14 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { FiUser, FiLogOut, FiGrid } from "react-icons/fi"; 
+import {  FiLogOut, FiGrid } from "react-icons/fi"; 
+import { FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import useUserData from "../../hooks/useUserData";
 import useAuth from "../../hooks/useAuth";
 
 const UserDropdown = () => {
-    const { user, loading: authLoading } = useAuth();
+    const { user, loading: authLoading, logout } = useAuth();
     const [userData, userLoading] = useUserData();
-    const { logout } = useAuth();
+    
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -19,11 +20,11 @@ const UserDropdown = () => {
     };
 
     // Handle loading state
-    if (authLoading || userLoading) {
-        return (
-            <div className="w-10 h-10 flex items-center justify-center animate-spin border-2 border-gray-300 border-t-transparent rounded-full"></div>
-        );
-    }
+    // if (authLoading) {
+    //     return (
+    //         <div className="w-10 h-10 flex items-center justify-center animate-spin border-2 border-gray-300 border-t-transparent rounded-full"></div>
+    //     );
+    // }
 
     // Check for user image in both user & userData, fallback to FiUser icon
     const userImage = user?.photo || userData?.photo || null;
@@ -39,7 +40,7 @@ const UserDropdown = () => {
                         className="rounded-full w-10 h-10 border border-gray-300 hover:border-gray-400"
                     />
                 ) : (
-                    <FiUser className="w-10 h-10 text-gray-500" />
+                    <FaUser className="w-7 h-7 text-gray-500 rounded-full" />
                 )}
             </MenuButton>
 
@@ -52,7 +53,7 @@ const UserDropdown = () => {
                 </div>
 
                 {/* Menu Items */}
-                <MenuItem as="button" onClick={() => navigate('/dashboard')} className="px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
+                <MenuItem as="button" onClick={() => navigate('/dashboard/overview')} className="px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-gray-700 hover:bg-gray-100">
                     <FiGrid className="text-lg text-gray-500" /> Dashboard
                 </MenuItem>
 

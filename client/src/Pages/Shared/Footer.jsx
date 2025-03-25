@@ -72,19 +72,7 @@ const Footer = () => {
           {/* Right - Opening Hours */}
           <div>
             <h3 className="text-lg font-semibold mb-3">OPENING HOURS</h3>
-            <ul>
-              {/* {FOOTER_DATA.openingHours.map((hour) => (
-                <li
-                  key={hour.id}
-                  className={`text-gray-400 mb-1 ${
-                    hour.highlight ? "font-semibold" : ""
-                  }`}
-                >
-                  {hour.days}: {hour.time}
-                </li>
-              ))} */}
-              Collecting Data...
-            </ul>
+           <p className="text-ferris-sec/80">Monday - Sunday: 08 AM - 01 PM</p>
           </div>
         </div>
 

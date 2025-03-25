@@ -10,32 +10,35 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMailSharp } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 
+
+
 export const CHOOSE_US_DATA = [
   {
     id: 1,
-    type: "Hygienic Food",
+    type: "Authentic Italian Cuisine",
     description:
-      "We adhere to the highest standards of food safety and hygiene, ensuring that every dish is prepared in a meticulously clean environment. Our commitment to hygiene guarantees a safe and enjoyable dining experience for all guests.",
+      "At Ferris Osteria, we bring the rich flavors of Italy to Berlin. Our menu features traditional dishes crafted with passion and the finest ingredients, ensuring an unforgettable dining experience.",
   },
   {
     id: 2,
-    type: "Natural Ambiance",
+    type: "Inviting Atmosphere",
     description:
-      "Our establishment provides a serene and inviting atmosphere, designed to enhance your dining experience. We prioritize comfort and aesthetics, allowing you to relax and enjoy your meal in an environment that fosters lasting memories.",
+      "Our restaurant offers a cozy and welcoming environment, perfect for any occasion. Whether you're here for a casual meal or a special celebration, our ambiance enhances your dining experience.",
   },
   {
     id: 3,
-    type: "Skilled Chefs",
+    type: "Prime Location with Terrace Seating",
     description:
-      "Our team of highly trained chefs possesses extensive culinary expertise, dedicated to crafting exquisite and innovative dishes. With a passion for perfection, we take pride in delivering a superior gastronomic experience.",
+      "Located opposite the Kaiser-Wilhelm-Gedächtnis-Kirche at Breitscheidplatz, Ferris Osteria boasts a spacious terrace. It's an ideal spot to enjoy your meal while taking in the vibrant surroundings.",
   },
   {
     id: 4,
-    type: "Event & Party Services",
+    type: "Exceptional Service",
     description:
-      "We specialize in the seamless organization of events and celebrations, offering bespoke catering and event planning services. Our goal is to ensure that every occasion is meticulously executed, leaving a lasting impression on your guests.",
+      "Our friendly and attentive staff are dedicated to providing top-notch service. Guests have praised our team's commitment to making every visit memorable.",
   },
 ];
+
 
 export const FOOTER_DATA = {
   footerNav: [
@@ -89,12 +92,12 @@ export const FOOTER_DATA = {
     // },
   ],
   openingHours: [
-    { id: 1, days: "Monday - Friday", time: "09:00 - 22:00" },
-    { id: 2, days: "Saturday", time: "11:00 - 00:00" },
-    { id: 3, days: "Sunday", time: "11:00 - 23:00" },
-    { id: 4, days: "* Happy hour", time: "17:00 - 21:00", highlight: true },
+    { id: 1, days: "Monday", time: "10:00 - 01:00" },
+    { id: 2, days: "Tuesday", time: "09:00 - 01:00" },
+    { id: 3, days: "Wednesday - Sunday", time: "10:00 - 01:00" },
+    
   ],
-  copyrightText: "© Copyright Ferris. All Rights Reserved.",
+  copyrightText: "© Copyright Ferris Osteria. All Rights Reserved.",
 };
 
 
@@ -152,4 +155,45 @@ export const BLOG_POSTS = [
       "Enjoy a cozy Italian dinner at Ferris Osteria in Berlin. As the weather cools down, there’s nothing better than enjoying a warm bowl of our homemade pasta or a flavorful meat dish like Vitello Tonnato. Paired with a glass of Italian wine, it’s the perfect setting for a night out. Whether you’re here with friends or loved ones, we promise to deliver an authentic Italian experience every time. Don’t wait—book your table now!",
   },
 ];
+
+
+
+export const FERRIS_BANNERS_INFO = [
+  {
+    id: 1,
+    title: "Culinary Excellence and Warm Hospitality",
+    description: "At Ferris Osteria, we pride ourselves on delivering an exceptional dining experience. Guests have praised our friendly staff and the delightful combination of quality food at reasonable prices. Whether you're joining us for lunch or dinner, our team is dedicated to making your visit memorable."
+  },
+  {
+    id: 2,
+    title: "Authentic Italian Cuisine in the Heart of Berlin",
+    description: "Nestled at Rankestraße 1a, Ferris Osteria brings the rich flavors of Italy to Berlin. Our menu boasts a variety of traditional dishes, from fresh seafood and grilled meats to classic pizzas and homemade pastas, all crafted with passion and the finest ingredients."
+  },
+  {
+    id: 3,
+    title: "Warm Ambiance and Friendly Service",
+    description: "At Ferris Osteria, we pride ourselves on creating a cozy atmosphere complemented by our attentive staff. Guests have praised our friendly service, making every dining experience memorable."
+  },
+  {
+    id: 4,
+    title: "Prime Location with a Spacious Terrace",
+    description: "Situated opposite the Kaiser-Wilhelm-Gedächtnis-Kirche at Breitscheidplatz, our restaurant features a large terrace. It's the perfect spot to relax and enjoy a meal while taking in the vibrant surroundings of one of Europe's most renowned shopping streets."
+  },
+  {
+    id: 5,
+    title: "Diverse Menu Catering to All Tastes",
+    description: "Our extensive menu offers something for everyone, from hearty meat dishes to vegetarian options. Each dish is prepared with care, ensuring a delightful culinary experience for all our guests."
+  },
+  {
+    id: 6,
+    title: "Join Our Community Online",
+    description: "Stay connected with Ferris Osteria through our social media channels. Follow us on Instagram and Facebook for the latest updates, promotions, and a glimpse into our daily specials."
+  },
+  {
+    id: 7,
+    title: "Seasonal Specials Crafted with Fresh Ingredients",
+    description: "At Ferris Osteria, we pride ourselves on using the freshest seasonal ingredients to create dishes that celebrate the flavors of each season. Our chefs meticulously select local produce to craft specials that not only delight the palate but also showcase the best that each time of year has to offer. Join us to experience a menu that evolves with the seasons, ensuring a unique dining experience with every visit."
+  }
+];
+
 

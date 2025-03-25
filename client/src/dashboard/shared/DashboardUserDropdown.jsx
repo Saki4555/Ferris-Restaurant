@@ -1,16 +1,27 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { FiUser, FiSettings, FiLogOut } from "react-icons/fi"; 
+import {  FiSettings, FiLogOut } from "react-icons/fi"; 
 import useUserData from "../../hooks/useUserData";
 import useAuth from "../../hooks/useAuth";
+import { FaUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const DashboardUserDropdown = () => {
-    const {user, loading: authLoading} = useAuth();
+    const {user, loading: authLoading, logout} =  useAuth();
     const [userData, userLoading] = useUserData();
+    const navigate = useNavigate();
     if(authLoading || userLoading){
         return  <div className="w-10 h-10 flex items-center justify-center animate-spin border-2 border-gray-300 border-t-transparent rounded-full"></div>
     }
 
     const userImage = user?.photo || userData?.photo || null;
+
+    const handleLogout = () => {
+        logout()
+          .then(() => {
+            navigate("/");
+          })
+          .catch();
+    };
 
     return (
         <Menu as="div" className="relative z-50 inline-block text-left">
@@ -23,7 +34,7 @@ const DashboardUserDropdown = () => {
                         className="rounded-full w-10 h-10 border border-gray-300 hover:border-gray-400"
                     />
                 ) : (
-                    <FiUser className="w-10 h-10 text-gray-500" />
+                    <FaUser className="w-10 rounded-full h-10 text-gray-500" />
                 )}
             </MenuButton>
 
@@ -45,7 +56,7 @@ const DashboardUserDropdown = () => {
                 </MenuItem> */}
 
                 {/* Logout Button */}
-                <MenuItem as="button" className=" w-full text-left px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-red-500 hover:bg-red-100">
+                <MenuItem onClick={handleLogout} as="button" className=" w-full text-left px-4 py-2 mt-2 flex items-center gap-3 rounded-md text-red-500 hover:bg-red-100">
                     <FiLogOut className="text-lg" /> Log Out
                 </MenuItem>
             </MenuItems>
