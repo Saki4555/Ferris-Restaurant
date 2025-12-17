@@ -347,7 +347,6 @@ async function run() {
 
     app.get("/cart/:email", async (req, res) => {
       const { email } = req.params;
-  
 
       // Check if the email is provided
       if (!email) {
@@ -378,42 +377,39 @@ async function run() {
       }
     });
 
-    app.patch('/cart/clear/:email', async (req, res) => {
+    app.patch("/cart/clear/:email", async (req, res) => {
       const email = req.params.email;
-   
-    
+
       // Check if email is provided
       if (!email) {
         return res.status(400).send({ message: "Email is required" });
       }
-    
-     
-    
+
       try {
         // Update the active cart for the given email by clearing the 'foods' array
         const result = await cartCollection.updateOne(
-          { email: email, status: 'active' },
-          { $set: { foods: [] } }  // Clear the foods array
+          { email: email, status: "active" },
+          { $set: { foods: [] } } // Clear the foods array
         );
-    
+
         // Check if a cart was updated
         if (result.modifiedCount > 0) {
           res.status(200).send({ message: "Cart cleared successfully" });
         } else {
-          res.status(404).send({ message: "No active cart found for this email" });
+          res
+            .status(404)
+            .send({ message: "No active cart found for this email" });
         }
       } catch (error) {
         // Handle any errors that occur
         console.error(error);
-        res.status(500).send({ message: "An error occurred while clearing the cart" });
+        res
+          .status(500)
+          .send({ message: "An error occurred while clearing the cart" });
       }
     });
-    
-    
 
     // cart------------------------end-------------------------
-
-
 
     // asm----------------payment-----------------------
     app.post("/create-checkout-session", async (req, res) => {
@@ -433,7 +429,7 @@ async function run() {
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         mode: "payment",
-        
+
         // success_url: `${process.env.CLIENT_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
         success_url: `https://ferris-restaurant.vercel.app/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `https://ferris-restaurant.vercel.app/cancel`,
@@ -443,18 +439,16 @@ async function run() {
       res.json({ id: session.id });
     });
 
-
     // verify payment
-    app.post('/verify-payment', async(req, res) => {
-      const {sessionId }= req.body;
+    app.post("/verify-payment", async (req, res) => {
+      const { sessionId } = req.body;
       const session = await stripe.checkout.sessions.retrieve(sessionId);
       if (session.payment_status === "paid") {
         res.send({ success: true });
       } else {
         res.send({ success: false });
       }
-  
-    })
+    });
     // payment-----------------end--------------------
 
     //order related API

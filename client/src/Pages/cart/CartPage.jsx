@@ -1,5 +1,3 @@
-
-
 import { FaTrashAlt } from "react-icons/fa";
 import useCartProvider from "../../hooks/useCartProvider";
 import useAuth from "../../hooks/useAuth";
@@ -18,9 +16,14 @@ const CartPage = () => {
     );
   }
 
-  const makePayment = async() => {
-    const stripe = await loadStripe(`${import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY}`);
-    const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/create-checkout-session`, cartData?.foods)
+  const makePayment = async () => {
+    const stripe = await loadStripe(
+      `${import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY}`
+    );
+    const res = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/create-checkout-session`,
+      cartData?.foods
+    );
 
     const session = res.data;
     console.log(session);
@@ -31,16 +34,30 @@ const CartPage = () => {
     if (result.error) {
       console.log(result.error);
     }
-  }
+  };
 
   const total = cartData?.foods?.reduce((acc, foodItem) => {
     return acc + foodItem.price * foodItem.quantity;
   }, 0);
-  
-
 
   return (
-    <div className="bg-ferris-sec min-h-screen flex flex-col items-center py-10">
+    <div className="bg-ferris-sec min-h-screen flex flex-col items-center pt-6 pb-10">
+        <section className="bg-ferris-prim mb-7  text-white mx-4 py-6 px-4 sm:px-8 rounded-md shadow-lg">
+   <div className="flex items-center justify-between">
+     
+      <div className="flex items-center space-x-4">
+         <svg className="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 0v4m0-4h4m-4 0H8" />
+         </svg>
+         <div>
+            <h3 className="text-xl font-bold">Dine Now, Pay Later</h3>
+            <p className="text-sm md:text-base">Flexible installment plan coming soon! Enjoy your meals with the option to pay later.</p>
+         </div>
+      </div>
+      
+      
+   </div>
+</section>
       <div className="w-full max-w-6xl px-4">
         <h1 className="text-3xl font-semibold text-ferris-prim mb-6 text-center">
           Your Cart
@@ -84,12 +101,11 @@ const CartPage = () => {
 
                   <div className="flex items-center space-x-4 lg:space-x-6 w-full mt-2 lg:mt-0 justify-between">
                     <p className="text-lg font-semibold">
-                     <span className="text-ferris-prim">€</span>{item.price.toFixed(2)}
+                      <span className="text-ferris-prim">€</span>
+                      {item.price.toFixed(2)}
                     </p>
                     <div className="flex items-center space-x-2">
-
-                        <p className="font-semibold">Quantity: {item.quantity}</p>
-                      
+                      <p className="font-semibold">Quantity: {item.quantity}</p>
                     </div>
 
                     {/* Delete Button on Desktop */}
@@ -109,19 +125,27 @@ const CartPage = () => {
                 Order Summary
               </h2>
               <div className="space-y-2">
-                
-             
                 <div className="flex justify-between">
                   <span className="text-lg text-ferris-ter">Total</span>
-                  <span className="text-lg font-semibold text-ferris-prim">€{total?.toFixed(2)}</span>
+                  <span className="text-lg font-semibold text-ferris-prim">
+                    €{total?.toFixed(2)}
+                  </span>
                 </div>
               </div>
 
-              <button onClick={makePayment} className="btn btn-primary w-full mt-4">Proceed to Checkout</button>
+              <button
+                onClick={makePayment}
+                className="btn btn-primary w-full mt-4"
+              >
+                Proceed to Checkout
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+    
+
     </div>
   );
 };
